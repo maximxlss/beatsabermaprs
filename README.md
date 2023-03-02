@@ -1,5 +1,5 @@
 # Beat Saber Map.rs
-![Crates.io](https://img.shields.io/crates/d/beatsabermaprs?style=plastic) ![docs.rs](https://img.shields.io/docsrs/beatsabermaprs?style=plastic)\
+[![Crates.io](https://img.shields.io/crates/d/beatsabermaprs?style=plastic)](https://crates.io/crates/beatsabermaprs)\
 _Implemented info.dat version: 2.0.0_\
 _Implemented beatmap version: 3.2.0 (supports 2.0.0 too)_\
 _Latest as of Beat Saber 1.24.0_
