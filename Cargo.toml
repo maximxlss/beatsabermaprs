@@ -1,0 +1,15 @@
+[package]
+name = "beatsabermaprs"
+description = "Interface to Beat Saber beatmaps"
+repository = "https://github.com/maximxlss/beatsabermaprs"
+readme = "README.md"
+categories = []
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[dependencies]
+serde = { version = "1.0.152", features = ["derive"] }
+serde_json = "1.0.93"
+serde_repr = "0.1.10"
+thiserror = "1.0.38"
