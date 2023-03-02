@@ -1,7 +1,7 @@
+//! See [Beatmap] and [BeatmapSetMeta]
+
 pub mod error;
 pub mod types;
-
-//! See [Beatmap] and [BeatmapSetMeta]
 
 pub use types::primary::BeatmapSetMeta;
 pub use types::primary::Beatmap;
@@ -11,13 +11,12 @@ pub use types::primary::Beatmap;
 
 #[cfg(test)]
 mod tests {
-    use crate::Beatmap;
-    use crate::types::{Beatmap, Level};
+    use crate::{Beatmap, BeatmapSetMeta};
     use crate::error::Result;
 
     #[test]
     fn reading_level() -> Result<()> {
-        let _level = Level::read_from_file("test_beatmap/info.dat")?;
+        let _level = BeatmapSetMeta::read_from_file("test_beatmap/info.dat")?;
         Ok(())
     }
 

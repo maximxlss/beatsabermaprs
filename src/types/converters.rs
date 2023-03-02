@@ -1,6 +1,7 @@
 use std::collections::HashMap;
 use crate::types::primary::{BasicEvent, BeatmapMeta, Bomb, BPMEvent, BurstSlider, ColorBoost, DifficultySet, Event, BeatmapSetMeta, Note, Obstacle, Rotation, Slider};
-use crate::types::{Beatmap, primary, schema};
+use crate::types::{primary, schema};
+use crate::Beatmap;
 use crate::types::common::{BoxFilterKind, NoteColor, read_string_from_file};
 use crate::error::Result;
 use crate::types::lightning::{BoxFilter, BoxFilterSettings, LightColorEvent, LightEventBox, LightEventLane, LightEvents, LightRotationEvent, LightTranslationEvent};
