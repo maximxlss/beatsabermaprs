@@ -240,23 +240,35 @@ impl Into<Event> for schema::ColorBoostBeatmapEvent {
     }
 }
 
-macro_rules! impl_box_group_into_event {
-    ($name:ty) => {
-        impl Into<Event> for $name {
-            fn into(self) -> Event {
-                Event::LightEventBox(Box::new(LightEventBox {
-                    beat: self.b,
-                    group: self.g,
-                    lanes: self.e.into_iter().map(|x| Into::<LightEventLane>::into(x)).collect(),
-                }))
-            }
-        }
-    };
+impl Into<Event> for schema::LightColorEventBoxGroup {
+    fn into(self) -> Event {
+        Event::LightEventBox(Box::new(LightEventBox {
+            beat: self.b,
+            group: self.g,
+            lanes: self.e.into_iter().map(|x| Into::<LightEventLane>::into(x)).collect(),
+        }))
+    }
 }
 
-impl_box_group_into_event!(schema::LightColorEventBoxGroup);
-impl_box_group_into_event!(schema::LightRotationEventBoxGroup);
-impl_box_group_into_event!(schema::LightTranslationEventBoxGroup);
+impl Into<Event> for schema::LightRotationEventBoxGroup {
+    fn into(self) -> Event {
+        Event::LightEventBox(Box::new(LightEventBox {
+            beat: self.b,
+            group: self.g,
+            lanes: self.e.into_iter().map(|x| Into::<LightEventLane>::into(x)).collect(),
+        }))
+    }
+}
+
+impl Into<Event> for schema::LightTranslationEventBoxGroup {
+    fn into(self) -> Event {
+        Event::LightEventBox(Box::new(LightEventBox {
+            beat: self.b,
+            group: self.g,
+            lanes: self.e.into_iter().map(|x| Into::<LightEventLane>::into(x)).collect(),
+        }))
+    }
+}
 
 impl Into<LightEventLane> for schema::LightColorEventBoxGroupLane {
     fn into(self) -> LightEventLane {
