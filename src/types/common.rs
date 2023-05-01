@@ -1,4 +1,4 @@
-use std::fs::File;
+use std::{fs::File, path::Path};
 use std::io::Read;
 use serde::{Serialize, Deserialize};
 use serde_repr::{Serialize_repr, Deserialize_repr};
@@ -135,7 +135,7 @@ impl Difficulty {
     }
 }
 
-pub(crate) fn read_string_from_file(path: &str) -> Result<String> {
+pub(crate) fn read_string_from_file(path: impl AsRef<Path>) -> Result<String> {
     let mut file = File::open(path)?;
     let mut data = String::new();
     file.read_to_string(&mut data)?;

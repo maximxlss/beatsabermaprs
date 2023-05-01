@@ -1,4 +1,5 @@
 use std::collections::HashMap;
+use std::path::Path;
 use crate::types::primary::{BasicEvent, BeatmapMeta, Bomb, BPMEvent, BurstSlider, ColorBoost, DifficultySet, Event, BeatmapSetMeta, Note, Obstacle, Rotation, Slider};
 use crate::types::{primary, schema};
 use crate::Beatmap;
@@ -11,7 +12,7 @@ impl BeatmapSetMeta {
         Ok(schema::Info::read_from_str(data)?.into())
     }
 
-    pub fn read_from_file(path: &str) -> Result<Self> {
+    pub fn read_from_file(path: impl AsRef<Path>) -> Result<Self> {
         Self::read_from_str(&read_string_from_file(path)?)
     }
 }
@@ -388,7 +389,7 @@ impl Beatmap {
         Ok(schema::BeatmapFile::read_from_str(data)?.into())
     }
 
-    pub fn read_from_file(path: &str) -> Result<Self> {
+    pub fn read_from_file(path: impl AsRef<Path>) -> Result<Self> {
         Self::read_from_str(&read_string_from_file(path)?)
     }
 }
